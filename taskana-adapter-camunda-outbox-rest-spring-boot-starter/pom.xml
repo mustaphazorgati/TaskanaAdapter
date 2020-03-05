@@ -17,7 +17,6 @@
                         <groupId>pro.taskana</groupId>
                         <artifactId>taskana-adapter-camunda-outbox-rest</artifactId>
                         <version>${project.version}</version>
-                        <classifier>classes</classifier>
                 </dependency>
                 <dependency>
                         <groupId>pro.taskana</groupId>
