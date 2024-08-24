@@ -103,8 +103,8 @@ jobs:
         env:
           GPG_KEY_NAME: ${{ secrets.GPG_KEY_NAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-          OSSRH_JIRA_USERNAME: ${{ secrets.OSSRH_JIRA_USERNAME }}
-          OSSRH_JIRA_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
+          MAVEN_USERNAME: 44pdzWD8
+          MAVEN_PASSWORD: eJZ25rsRdH7ZiePJO52JUy7LyVkNIgXxXEBmnTNH3aOM
       - name: Update version to next snapshot and push back
         run: |
           ci/change_version.sh -i -m .
@@ -116,7 +116,7 @@ jobs:
         run: rm -rf ~/.m2/repository/pro/taskana
       - name: Cancel workflow
         if: failure()
-        uses: andymckay/cancel-action@0.4
+        uses: andymckay/cancel-action@0.5
 
   upload_to_sonar:
     runs-on: ubuntu-20.04
@@ -163,4 +163,4 @@ jobs:
         run: rm -rf ~/.m2/repository/pro/taskana
       - name: Cancel workflow
         if: failure()
-        uses: andymckay/cancel-action@0.4
+        uses: andymckay/cancel-action@0.5
